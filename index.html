@@ -6,9 +6,7 @@
   <title>Palem Sathyanarayana | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -16,14 +14,8 @@
       color: #222;
       transition: all 0.5s ease;
     }
-    .dark-mode {
-      background: #121212;
-      color: #eee;
-    }
-    .dark-mode .card {
-      background: #1e1e1e;
-      border: 1px solid #444;
-    }
+    .dark-mode { background: #121212; color: #eee; }
+    .dark-mode .card { background: #1e1e1e; border: 1px solid #444; }
     .wrapper {
       max-width: 850px;
       margin: auto;
@@ -36,23 +28,20 @@
       margin: 20px auto;
       box-shadow: 0 0 12px rgba(0,0,0,0.2);
     }
-    h1, h2, h3 {
-      text-align: center;
-    }
-    h1 {
-      font-size: 2rem;
-    }
+    h1, h2, h3 { text-align: center; }
     .card {
       background: white;
       margin: 20px 0;
       padding: 20px;
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
     }
     .project img, .qr-img {
       width: 100%;
@@ -71,15 +60,14 @@
       margin-top: 10px;
       transition: background 0.3s ease;
     }
-    .btn:hover {
-      background: #0056b3;
-    }
+    .btn:hover { background: #0056b3; }
     .toggle-mode {
       position: fixed;
       top: 15px;
       right: 15px;
-      cursor: pointer;
       font-size: 26px;
+      cursor: pointer;
+      z-index: 999;
     }
     form input, form textarea {
       width: 100%;
@@ -87,7 +75,6 @@
       margin: 8px 0;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-size: 1rem;
     }
     form button {
       padding: 10px 20px;
@@ -96,24 +83,35 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 10px;
       font-size: 1rem;
     }
+    #scrollBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007bff;
+      color: white;
+      padding: 10px 12px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
     @media (max-width: 600px) {
-      img.profile {
-        width: 100px;
-      }
+      img.profile { width: 100px; }
     }
   </style>
 </head>
 <body>
 
   <div class="toggle-mode" onclick="toggleDarkMode()">🌙</div>
+  <div id="scrollBtn" onclick="scrollToTop()">↑</div>
 
   <div class="wrapper">
     <img src="me.jpg" alt="My Photo" class="profile">
     <h1>Palem Sathyanarayana</h1>
-    <p style="text-align:center;">Full Stack Developer | Building modern apps with a strong foundation</p>
+    <p style="text-align:center;">Full Stack Developer | Creating impressive websites that stand out</p>
 
     <h2>Skills</h2>
     <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
@@ -121,13 +119,13 @@
     <h2>Projects</h2>
     <div class="card project">
       <h3>Digital Visiting Card</h3>
-      <p>Online card with QR and voice intro.</p>
+      <p>Online card with QR and intro.</p>
       <img src="project1.jpg" alt="Project 1">
       <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">View Demo</a>
     </div>
     <div class="card project">
       <h3>Portfolio Website</h3>
-      <p>This professional portfolio you’re seeing now.</p>
+      <p>This professional portfolio site.</p>
       <img src="project2.jpg" alt="Project 2">
       <a href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" class="btn" target="_blank">View Demo</a>
     </div>
@@ -167,7 +165,7 @@
 
     <h2>Contact</h2>
     <div class="card">
-      <form>
+      <form onsubmit="sendMessage(event)">
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
         <textarea rows="4" placeholder="Your Message" required></textarea>
@@ -179,6 +177,26 @@
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = () => {
+      document.getElementById("scrollBtn").style.display = window.scrollY > 100 ? "block" : "none";
+      document.querySelectorAll(".card").forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          card.classList.add("show");
+        }
+      });
+    };
+
+    function sendMessage(e) {
+      e.preventDefault();
+      alert("✅ Message sent successfully!");
+      e.target.reset();
     }
   </script>
 
