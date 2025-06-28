@@ -45,6 +45,41 @@
       font-size: 1.1em;
       color: #444;
     }
+
+    /* Skills Section */
+    .skills {
+      background: #fff;
+      padding: 40px 20px;
+    }
+    .skills h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .skill {
+      text-align: left;
+      max-width: 500px;
+      margin: 10px auto;
+    }
+    .skill-name {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 15px;
+      border-radius: 20px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      width: 0%;
+      animation: fillbar 2s forwards;
+    }
+    @keyframes fillbar {
+      to { width: var(--width); }
+    }
   </style>
 </head>
 <body>
@@ -56,6 +91,29 @@
       Welcome to my portfolio! I'm a recent B.Tech graduate with a drive to build real-world solutions. I enjoy learning new technologies, solving problems, and making clean, creative websites.
     </p>
   </div>
+
+  <div class="skills">
+    <h2>Skills</h2>
+
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="bar"><div class="bar-fill" style="--width: 90%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">CSS</div>
+      <div class="bar"><div class="bar-fill" style="--width: 85%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="bar"><div class="bar-fill" style="--width: 80%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">Python</div>
+      <div class="bar"><div class="bar-fill" style="--width: 75%;"></div></div>
+    </div>
+  </div>
 </body>
 </html>
-Yes
