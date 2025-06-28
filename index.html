@@ -5,136 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Palem Sathyanarayana | Portfolio</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #222;
-      transition: background 0.5s, color 0.5s;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f0f2f5;
+      color: #333;
+      transition: all 0.4s ease;
     }
     .dark-mode {
       background: #121212;
       color: #eee;
     }
-    .wrapper {
-      max-width: 800px;
+    .container {
+      max-width: 900px;
       margin: auto;
       padding: 20px;
-      background: white;
     }
-    .dark-mode .wrapper {
-      background: #1e1e1e;
+    header {
+      text-align: center;
+      padding: 30px 0;
     }
-    img.profile {
-      width: 150px;
+    .profile-img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
+      margin: 0 auto 15px;
       display: block;
-      margin: 20px auto;
     }
-    h1, h2, h3 { text-align: center; }
-    h2 {
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    h2.section-title {
       background: #007bff;
       color: white;
       padding: 10px;
+      margin-top: 30px;
       border-radius: 5px;
     }
-    .skill, .project, .certificate, .timeline-event, .education, .achievement {
-      margin: 20px 0;
+    .card {
+      background: white;
+      margin-top: 15px;
       padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: #fafafa;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .dark-mode .skill, .dark-mode .project, .dark-mode .certificate, .dark-mode .timeline-event, .dark-mode .education, .dark-mode .achievement {
-      background: #2c2c2c;
-      border-color: #444;
+    .dark-mode .card {
+      background: #1e1e1e;
+      border: 1px solid #333;
     }
     .project img {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
       border-radius: 5px;
+      margin-top: 10px;
     }
     .btn {
-      display: inline-block;
-      margin-top: 10px;
       background: #007bff;
       color: white;
-      padding: 10px 15px;
+      padding: 8px 14px;
       text-decoration: none;
       border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
     }
     .toggle-mode {
       position: fixed;
-      top: 15px;
-      right: 15px;
+      top: 20px;
+      right: 20px;
+      font-size: 26px;
       cursor: pointer;
-      font-size: 24px;
     }
-    @media (max-width: 600px) {
-      .wrapper {
-        padding: 10px;
-      }
-      img.profile {
-        width: 100px;
-      }
+    @media(max-width: 600px) {
+      h1 { font-size: 1.5em; }
+      .container { padding: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="toggle-mode" onclick="toggleDarkMode()">🌙</div>
+<div class="toggle-mode" onclick="toggleDarkMode()">🌙</div>
 
-  <div class="wrapper">
-    <img src="me.jpg" alt="My Photo" class="profile">
+<div class="container">
+  <header>
+    <img src="me.jpg" class="profile-img" alt="My Photo">
     <h1>Palem Sathyanarayana</h1>
-    <p style="text-align:center;">Full Stack Developer creating modern websites that impress recruiters.</p>
+    <p>Full Stack Developer crafting modern websites that impress recruiters.</p>
+  </header>
 
-    <h2>Skills</h2>
-    <div class="skill">HTML, CSS, JavaScript, Python, GitHub</div>
+  <h2 class="section-title">Skills</h2>
+  <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
 
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Digital Visiting Card</h3>
-      <img src="project1.jpg" alt="Project 1">
-      <p>Online card with QR code and intro.</p>
-      <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
-    </div>
-    <div class="project">
-      <h3>Portfolio Website</h3>
-      <img src="project2.jpg" alt="Project 2">
-      <p>This portfolio site.</p>
-      <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
-    </div>
-
-    <h2>Certificates</h2>
-    <div class="certificate">🎓 Responsive Web Design – <a href="#">View</a></div>
-    <div class="certificate">📜 JavaScript Essentials – <a href="#">View</a></div>
-    <div class="certificate">📄 Python for Beginners – <a href="#">View</a></div>
-
-    <h2>Education</h2>
-    <div class="education">🎓 BTech in ECE - JNTUH - 2025</div>
-    <div class="education">📘 Intermediate (MPC) - 2021</div>
-    <div class="education">🏫 SSC - 2019</div>
-
-    <h2>Achievements</h2>
-    <div class="achievement">🏅 Top 1% in SSC Board Exams</div>
-    <div class="achievement">🧠 Cleared Aptitude Rounds in Govt Exams</div>
-    <div class="achievement">📱 Completed multiple tech projects solo</div>
-
-    <h2>My Journey</h2>
-    <div class="timeline-event"><strong>2019:</strong> SSC Completed 🏫</div>
-    <div class="timeline-event"><strong>2021:</strong> Intermediate (MPC) 📘</div>
-    <div class="timeline-event"><strong>2021:</strong> BTech Started 🎓</div>
-    <div class="timeline-event"><strong>2025:</strong> BTech Graduated 🎓</div>
-    <div class="timeline-event"><strong>2025:</strong> Building Projects 💻</div>
+  <h2 class="section-title">Projects</h2>
+  <div class="card project">
+    <h3>Digital Visiting Card</h3>
+    <img src="project1.jpg" alt="Project 1">
+    <p>Online card with QR code and intro.</p>
+    <a href="https://palemsathyanarayana26.github.io/p1" target="_blank" class="btn">View Demo</a>
+  </div>
+  <div class="card project">
+    <h3>Portfolio Website</h3>
+    <img src="project2.jpg" alt="Project 2">
+    <p>This portfolio site.</p>
+    <a href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank" class="btn">View Demo</a>
   </div>
 
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
+  <h2 class="section-title">Certificates</h2>
+  <div class="card">🎓 Responsive Web Design – <a href="#">View</a></div>
+  <div class="card">📜 JavaScript Essentials – <a href="#">View</a></div>
+  <div class="card">📄 Python for Beginners – <a href="#">View</a></div>
+
+  <h2 class="section-title">Education</h2>
+  <div class="card">🎓 BTech in ECE - JNTUH - 2025</div>
+  <div class="card">📘 Intermediate (MPC) - 2021</div>
+  <div class="card">🏫 SSC - 2019</div>
+
+  <h2 class="section-title">Achievements</h2>
+  <div class="card">🏅 Top 1% in SSC Board Exams</div>
+  <div class="card">🧠 Cleared Aptitude Rounds in Govt Exams</div>
+  <div class="card">📱 Completed multiple tech projects solo</div>
+
+  <h2 class="section-title">My Journey</h2>
+  <div class="card">📅 2019: SSC Completed</div>
+  <div class="card">📅 2021: Intermediate (MPC)</div>
+  <div class="card">📅 2025: BTech Graduated</div>
+  <div class="card">💻 2025: Building Projects</div>
+</div>
+
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+</script>
 
 </body>
 </html>
