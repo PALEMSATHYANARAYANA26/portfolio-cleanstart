@@ -1,173 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Palem Sathyanarayana | Portfolio</title>
-  <style>
-    :root {
-      --main-color: #007bff;
-      --bg-color: #f9f9f9;
-      --text-dark: #333;
-      --text-light: #666;
-    }
+<html>
+  <head>
+    <title>Palem Sathyanarayana - Portfolio</title>
+    <style>
+      body { font-family: sans-serif; margin: 0; background: #f5f5f5; }
+      .container { max-width: 800px; margin: auto; padding: 20px; background: white; }
+      img.profile { width: 150px; border-radius: 50%; display: block; margin: auto; }
+      h1, h2, h3 { text-align: center; }
+      .skill { margin: 10px 0; }
+      .bar { background: #ddd; height: 20px; border-radius: 10px; }
+      .fill { background: #007bff; height: 20px; border-radius: 10px; width: 0; animation: grow 2s forwards; }
+      @keyframes grow { to { width: var(--width); } }
+      .project { margin: 20px 0; border: 1px solid #ccc; border-radius: 10px; padding: 15px; background: #fafafa; }
+      .project img { width: 100%; border-radius: 10px; }
+      .btn { display: inline-block; margin-top: 10px; background: #007bff; color: white; padding: 10px; text-decoration: none; border-radius: 5px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="me.jpg" alt="My Photo" class="profile">
+      <h1>Palem Sathyanarayana</h1>
+      <p style="text-align:center;">I am a Full Stack Developer building websites that impress recruiters.</p>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      <h2>Skills</h2>
+      <div class="skill">HTML<div class="bar"><div class="fill" style="--width:90%;"></div></div></div>
+      <div class="skill">CSS<div class="bar"><div class="fill" style="--width:85%;"></div></div></div>
+      <div class="skill">JavaScript<div class="bar"><div class="fill" style="--width:80%;"></div></div></div>
+      <div class="skill">Python<div class="bar"><div class="fill" style="--width:75%;"></div></div></div>
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
+      <h2>Projects</h2>
 
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+      <div class="project">
+        <h3>Digital Visiting Card</h3>
+        <img src="https://palemsathyanarayana26.github.io/portfolio-cleanstart/project1.jpg" alt="Project 1">
+        <p>My visiting card project with QR code and personal info.</p>
+        <a href="https://palemsathyanarayana26.github.io/p1" target="_blank" class="btn">View Demo</a>
+      </div>
 
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid var(--main-color);
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin: 20px 0 10px;
-    }
-
-    .typewriter {
-      font-size: 1.2em;
-      font-family: monospace;
-      color: var(--text-light);
-      overflow: hidden;
-      border-right: .15em solid var(--main-color);
-      white-space: nowrap;
-      animation: typing 4s steps(40, end) forwards;
-      width: 0;
-      margin: 0 auto;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    .section {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: 2em;
-      text-align: center;
-      margin-bottom: 30px;
-      color: var(--main-color);
-    }
-
-    .about p {
-      text-align: center;
-      max-width: 700px;
-      margin: auto;
-      color: var(--text-light);
-    }
-
-    .skills .skill {
-      margin: 20px 0;
-    }
-
-    .skill-name {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .skill-bar {
-      background: #e0e0e0;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 20px;
-    }
-
-    .skill-bar-fill {
-      height: 100%;
-      background: linear-gradient(to right, #00c6ff, #0072ff);
-      width: 0;
-      border-radius: 20px;
-      animation: fillSkill 2s forwards;
-    }
-
-    .skills .skill:nth-child(1) .skill-bar-fill { width: 90%; }
-    .skills .skill:nth-child(2) .skill-bar-fill { width: 85%; }
-    .skills .skill:nth-child(3) .skill-bar-fill { width: 80%; }
-    .skills .skill:nth-child(4) .skill-bar-fill { width: 75%; }
-
-    @keyframes fillSkill {
-      from { width: 0 }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
-      }
-
-      .typewriter {
-        font-size: 1em;
-      }
-
-      .section-title {
-        font-size: 1.5em;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="me.jpg" alt="My Photo" />
-    <h1>Palem Sathyanarayana</h1>
-    <div class="typewriter">I'm a passionate Full Stack Developer who builds magic with code...</div>
-  </header>
-
-  <section class="section about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I'm a B.Tech graduate with a drive to turn ideas into digital products. From clean code to creative UI, I love building real-world solutions that solve real problems.
-    </p>
-  </section>
-
-  <section class="section skills">
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skill">
-      <div class="skill-name">HTML</div>
-      <div class="skill-bar"><div class="skill-bar-fill"></div></div>
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <img src="https://palemsathyanarayana26.github.io/portfolio-cleanstart/project2.jpg" alt="Project 2">
+        <p>This portfolio site you’re viewing now, built from scratch.</p>
+        <a href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank" class="btn">View Demo</a>
+      </div>
     </div>
-
-    <div class="skill">
-      <div class="skill-name">CSS</div>
-      <div class="skill-bar"><div class="skill-bar-fill"></div></div>
-    </div>
-
-    <div class="skill">
-      <div class="skill-name">JavaScript</div>
-      <div class="skill-bar"><div class="skill-bar-fill"></div></div>
-    </div>
-
-    <div class="skill">
-      <div class="skill-name">Python</div>
-      <div class="skill-bar"><div class="skill-bar-fill"></div></div>
-    </div>
-
-  </section>
-
-</body>
+  </body>
 </html>
