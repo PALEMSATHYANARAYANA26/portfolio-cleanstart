@@ -5,80 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Palem Sathyanarayana | Portfolio</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      background: #f0f2f5;
+      margin: 0;
+      background: #f4f4f4;
       color: #333;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
     }
-    .dark-mode {
-      background: #121212;
-      color: #eee;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    header {
-      text-align: center;
-      padding: 30px 0;
-    }
+    .dark-mode { background: #121212; color: #eee; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      margin: 0 auto 15px;
       display: block;
+      margin: 20px auto;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+    h1, h2.section-title {
+      text-align: center;
     }
-    h2.section-title {
+    .section-title {
       background: #007bff;
       color: white;
       padding: 10px;
-      margin-top: 30px;
       border-radius: 5px;
+      margin-top: 40px;
     }
     .card {
       background: white;
-      margin-top: 15px;
+      border-radius: 8px;
       padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 15px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .dark-mode .card {
       background: #1e1e1e;
-      border: 1px solid #333;
-    }
-    .project img {
-      width: 100%;
-      border-radius: 5px;
-      margin-top: 10px;
+      border: 1px solid #444;
     }
     .btn {
       background: #007bff;
       color: white;
-      padding: 8px 14px;
+      padding: 10px 15px;
       text-decoration: none;
-      border-radius: 5px;
       display: inline-block;
+      border-radius: 5px;
       margin-top: 10px;
+    }
+    .qr-img {
+      display: block;
+      width: 180px;
+      margin: 10px auto;
     }
     .toggle-mode {
       position: fixed;
-      top: 20px;
+      top: 15px;
       right: 20px;
-      font-size: 26px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
     }
     @media(max-width: 600px) {
-      h1 { font-size: 1.5em; }
-      .container { padding: 10px; }
+      .profile-img { width: 100px; height: 100px; }
     }
   </style>
 </head>
@@ -87,49 +88,31 @@
 <div class="toggle-mode" onclick="toggleDarkMode()">🌙</div>
 
 <div class="container">
-  <header>
-    <img src="me.jpg" class="profile-img" alt="My Photo">
-    <h1>Palem Sathyanarayana</h1>
-    <p>Full Stack Developer crafting modern websites that impress recruiters.</p>
-  </header>
+  <img src="me.jpg" alt="My Photo" class="profile-img">
+  <h1>Palem Sathyanarayana</h1>
+  <p style="text-align:center;">Java Full Stack Developer | Passionate about building web apps</p>
 
-  <h2 class="section-title">Skills</h2>
-  <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
-
-  <h2 class="section-title">Projects</h2>
-  <div class="card project">
-    <h3>Digital Visiting Card</h3>
-    <img src="project1.jpg" alt="Project 1">
-    <p>Online card with QR code and intro.</p>
-    <a href="https://palemsathyanarayana26.github.io/p1" target="_blank" class="btn">View Demo</a>
-  </div>
-  <div class="card project">
-    <h3>Portfolio Website</h3>
-    <img src="project2.jpg" alt="Project 2">
-    <p>This portfolio site.</p>
-    <a href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank" class="btn">View Demo</a>
+  <h2 class="section-title">Resume</h2>
+  <div class="card" style="text-align:center;">
+    <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
   </div>
 
-  <h2 class="section-title">Certificates</h2>
-  <div class="card">🎓 Responsive Web Design – <a href="#">View</a></div>
-  <div class="card">📜 JavaScript Essentials – <a href="#">View</a></div>
-  <div class="card">📄 Python for Beginners – <a href="#">View</a></div>
+  <h2 class="section-title">QR Code</h2>
+  <div class="card" style="text-align:center;">
+    <p>Scan to open my Digital Visiting Card</p>
+    <img src="qrcode.png" alt="QR Code" class="qr-img">
+    <a href="https://palemsathyanarayana26.github.io/p1" target="_blank" class="btn">Open Visiting Card</a>
+  </div>
 
-  <h2 class="section-title">Education</h2>
-  <div class="card">🎓 BTech in ECE - JNTUH - 2025</div>
-  <div class="card">📘 Intermediate (MPC) - 2021</div>
-  <div class="card">🏫 SSC - 2019</div>
-
-  <h2 class="section-title">Achievements</h2>
-  <div class="card">🏅 Top 1% in SSC Board Exams</div>
-  <div class="card">🧠 Cleared Aptitude Rounds in Govt Exams</div>
-  <div class="card">📱 Completed multiple tech projects solo</div>
-
-  <h2 class="section-title">My Journey</h2>
-  <div class="card">📅 2019: SSC Completed</div>
-  <div class="card">📅 2021: Intermediate (MPC)</div>
-  <div class="card">📅 2025: BTech Graduated</div>
-  <div class="card">💻 2025: Building Projects</div>
+  <h2 class="section-title">Contact Me</h2>
+  <div class="card">
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 </div>
 
 <script>
