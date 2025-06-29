@@ -9,30 +9,28 @@
   <style>
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
       color: #222;
       transition: all 0.5s ease;
     }
     .dark-mode { background: #121212; color: #eee; }
-    .dark-mode .card { background: #1e1e1e; border-color: #444; }
+    .dark-mode .card { background: rgba(255, 255, 255, 0.1); border: 1px solid #444; }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: white;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
       padding: 12px 0;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    .dark-mode nav { background: #1a1a1a; }
-
     .nav-links {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 20px;
       list-style: none;
       margin: 0;
@@ -58,15 +56,18 @@
       box-shadow: 0 0 12px rgba(0,0,0,0.2);
     }
 
-    h1, h2, h3 { text-align: center; }
-
     .card {
-      background: white;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(15px);
       margin: 20px 0;
       padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
+    .card:hover { transform: scale(1.02); }
+
+    h1, h2, h3 { text-align: center; }
 
     .project-grid {
       display: grid;
@@ -93,28 +94,12 @@
     }
 
     .qr-img { width: 150px; }
-    .testimonial-grid { display: grid; gap: 20px; }
-    .testimonial {
-      padding: 16px;
-      border-left: 4px solid #007bff;
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-    .dark-mode .testimonial {
-      background: #222;
-      border-left-color: #0af;
-    }
-    .testimonial span {
-      display: block;
-      font-style: italic;
-      margin-top: 5px;
-      font-size: 0.95em;
-    }
 
     form input, form textarea {
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
+      width: 100%;
     }
 
     @media (max-width: 600px) {
@@ -126,22 +111,19 @@
 <body>
   <nav>
     <ul class="nav-links">
-      <li><a href="#top">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#certificates">Certificates</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="javascript:void(0)" onclick="toggleDarkMode()">🌙</a></li>
     </ul>
   </nav>
 
-  <div class="wrapper" id="top">
+  <div class="wrapper" id="home">
     <img src="me.jpg" alt="My Photo" class="profile" data-aos="fade-down">
-    <h1>Palem Sathyanarayana</h1>
-    <p style="text-align:center;" data-aos="fade-up">Full Stack Developer | Building projects that impress recruiters</p>
+    <h1 data-aos="fade-up">Palem Sathyanarayana</h1>
+    <p style="text-align:center;" data-aos="fade-up">Full Stack Developer | Impressive Projects | Clean Design</p>
 
     <h2 id="projects" data-aos="fade-up">Projects</h2>
     <div class="card project-grid" data-aos="fade-up">
@@ -161,24 +143,6 @@
     <div class="card" data-aos="fade-left">🎓 BTech in ECE – JNTUH – 2025</div>
     <div class="card" data-aos="fade-right">📘 Intermediate (MPC) – 2021</div>
     <div class="card" data-aos="fade-left">🏫 SSC – 2019</div>
-
-    <h2 id="achievements" data-aos="fade-up">Achievements</h2>
-    <div class="card" data-aos="fade-right">🏅 Top 1% in SSC Board Exams</div>
-    <div class="card" data-aos="fade-left">🧠 Cleared Aptitude Rounds in Govt Exams</div>
-    <div class="card" data-aos="fade-right">📱 Built multiple solo tech projects</div>
-
-    <h2 id="journey" data-aos="fade-up">My Journey</h2>
-    <div class="card" data-aos="zoom-in">
-      📅 2019: SSC Completed<br>
-      📅 2021: Intermediate (MPC)<br>
-      📅 2025: BTech Graduated<br>
-      💻 2025: Building Projects
-    </div>
-
-    <h2 id="certificates" data-aos="fade-up">Certificates</h2>
-    <div class="card" data-aos="fade-right">🎓 Responsive Web Design – <a href="#">View</a></div>
-    <div class="card" data-aos="fade-left">📜 JavaScript Essentials – <a href="#">View</a></div>
-    <div class="card" data-aos="fade-right">📄 Python for Beginners – <a href="#">View</a></div>
 
     <h2 id="resume" data-aos="fade-up">Resume</h2>
     <div class="card" style="text-align:center;" data-aos="zoom-in">
