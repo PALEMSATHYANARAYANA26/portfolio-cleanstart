@@ -14,14 +14,8 @@
       color: #222;
       transition: all 0.5s ease;
     }
-    .dark-mode {
-      background: #121212;
-      color: #eee;
-    }
-    .dark-mode .card {
-      background: #1e1e1e;
-      border-color: #444;
-    }
+    .dark-mode { background: #121212; color: #eee; }
+    .dark-mode .card { background: #1e1e1e; border-color: #444; }
 
     nav {
       position: fixed;
@@ -32,9 +26,8 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    .dark-mode nav {
-      background: #1a1a1a;
-    }
+    .dark-mode nav { background: #1a1a1a; }
+
     .nav-links {
       display: flex;
       justify-content: center;
@@ -48,9 +41,6 @@
       color: #007bff;
       text-decoration: none;
       font-weight: 600;
-    }
-    .nav-links a:hover {
-      text-decoration: underline;
     }
 
     .wrapper {
@@ -79,12 +69,21 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
-    .project img, .qr-img {
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project img {
       width: 100%;
-      max-height: 180px;
-      object-fit: cover;
       border-radius: 10px;
-      margin-top: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project img:hover {
+      transform: scale(1.03);
     }
 
     .btn {
@@ -96,34 +95,44 @@
       border-radius: 30px;
       margin-top: 10px;
     }
-    .btn:hover {
-      background: #0056b3;
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
     }
 
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
+    .modal img {
+      max-width: 90%;
+      max-height: 80vh;
       border-radius: 8px;
     }
-    form button {
-      padding: 10px 20px;
-      background: #28a745;
+
+    .modal:target {
+      display: flex;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
       color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .qr-img {
+      width: 150px;
     }
 
     @media (max-width: 600px) {
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-      }
-      img.profile {
-        width: 100px;
-      }
+      .nav-links { flex-direction: column; align-items: center; }
+      img.profile { width: 100px; }
     }
   </style>
 </head>
@@ -180,20 +189,30 @@
         </div>
       </div>
     </div>
+
     <h2 id="projects">Projects</h2>
-    <div class="card">
-      <h3>Digital Visiting Card</h3>
-      <img src="project1.jpg" alt="Project 1">
-      <p>Online card with QR and intro.</p>
-      <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
-    </div>
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <img src="project2.jpg" alt="Project 2">
-      <p>This professional portfolio site.</p>
-      <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
+    <div class="card project-grid">
+      <div class="project">
+        <a href="#img1"><img src="project1.jpg" alt="Project 1"></a>
+        <p>Digital Visiting Card</p>
+        <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
+      </div>
+      <div class="project">
+        <a href="#img2"><img src="project2.jpg" alt="Project 2"></a>
+        <p>Portfolio Website</p>
+        <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
+      </div>
     </div>
 
+    <!-- Zoom modals -->
+    <div id="img1" class="modal">
+      <a href="#" class="modal-close">✖</a>
+      <img src="project1.jpg" alt="Project 1 Large">
+    </div>
+    <div id="img2" class="modal">
+      <a href="#" class="modal-close">✖</a>
+      <img src="project2.jpg" alt="Project 2 Large">
+    </div>
     <h2 id="certificates">Certificates</h2>
     <div class="card">🎓 Responsive Web Design – <a href="#">View</a></div>
     <div class="card">📜 JavaScript Essentials – <a href="#">View</a></div>
@@ -244,7 +263,7 @@
       <a class="btn" href="https://wa.me/919949652954" target="_blank">📱 WhatsApp</a>
       <a class="btn" href="mailto:palemsathipalem@gmail.com">📧 Email</a>
     </div>
-  </div>
+  </div> <!-- end of wrapper -->
 
   <script>
     function toggleDarkMode() {
