@@ -14,14 +14,8 @@
       color: #222;
       transition: all 0.5s ease;
     }
-    .dark-mode {
-      background: #121212;
-      color: #eee;
-    }
-    .dark-mode .card {
-      background: #1e1e1e;
-      border-color: #444;
-    }
+    .dark-mode { background: #121212; color: #eee; }
+    .dark-mode .card { background: #1e1e1e; border-color: #444; }
 
     nav {
       position: fixed;
@@ -32,9 +26,8 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    .dark-mode nav {
-      background: #1a1a1a;
-    }
+    .dark-mode nav { background: #1a1a1a; }
+
     .nav-links {
       display: flex;
       justify-content: center;
@@ -135,6 +128,30 @@
       width: 150px;
     }
 
+    .testimonial-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .testimonial {
+      padding: 16px;
+      border-left: 4px solid #007bff;
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .dark-mode .testimonial {
+      background: #222;
+      border-left-color: #0af;
+    }
+
+    .testimonial span {
+      display: block;
+      font-style: italic;
+      margin-top: 5px;
+      font-size: 0.95em;
+    }
+
     @media (max-width: 600px) {
       .nav-links { flex-direction: column; align-items: center; }
       img.profile { width: 100px; }
@@ -149,6 +166,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#techstack">Tech Stack</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#certificates">Certificates</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#resume">Resume</a></li>
@@ -200,6 +218,13 @@
     <div id="img2" class="modal">
       <a href="#" class="modal-close">✖</a>
       <img src="project2.jpg" alt="Project 2 Large">
+    </div>
+
+    <h2 id="testimonials">Testimonials</h2>
+    <div class="card testimonial-grid">
+      <div class="testimonial">🧑‍💼 “Sathya’s portfolio blew me away. Clean and confident.”<span>– Tech Interviewer, TalentPanel AI</span></div>
+      <div class="testimonial">👨‍🏫 “He always asked the right questions and built projects quickly.”<span>– Mrs. Lakshmi, Faculty Advisor</span></div>
+      <div class="testimonial">👨‍💻 “Motivated, detail-oriented, and always improving!”<span>– Ramesh, Peer Developer</span></div>
     </div>
     <h2 id="certificates">Certificates</h2>
     <div class="card">🎓 Responsive Web Design – <a href="#">View</a></div>
