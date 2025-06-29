@@ -14,16 +14,22 @@
       color: #222;
       transition: all 0.5s ease;
     }
-    .dark-mode { background: #121212; color: #eee; }
-    .dark-mode .card { background: #1e1e1e; border: 1px solid #444; }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    .dark-mode .card {
+      background: #1e1e1e;
+      border-color: #444;
+    }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       background: white;
-      padding: 10px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 12px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       z-index: 999;
     }
     .dark-mode nav {
@@ -34,9 +40,9 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
+      list-style: none;
       margin: 0;
       padding: 0;
-      list-style: none;
     }
     .nav-links a {
       color: #007bff;
@@ -61,7 +67,10 @@
       box-shadow: 0 0 12px rgba(0,0,0,0.2);
     }
 
-    h1, h2, h3 { text-align: center; }
+    h1, h2, h3 {
+      text-align: center;
+    }
+
     .card {
       background: white;
       margin: 20px 0;
@@ -87,14 +96,8 @@
       border-radius: 30px;
       margin-top: 10px;
     }
-    .btn:hover { background: #0056b3; }
-
-    .toggle-mode {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      font-size: 26px;
-      cursor: pointer;
+    .btn:hover {
+      background: #0056b3;
     }
 
     form input, form textarea {
@@ -114,17 +117,17 @@
     }
 
     @media (max-width: 600px) {
-      img.profile { width: 100px; }
       .nav-links {
         flex-direction: column;
         align-items: center;
+      }
+      img.profile {
+        width: 100px;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="toggle-mode" onclick="toggleDarkMode()">🌙</div>
 
   <nav>
     <ul class="nav-links">
@@ -135,6 +138,7 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="javascript:void(0)" onclick="toggleDarkMode()">🌙</a></li>
     </ul>
   </nav>
 
@@ -147,17 +151,17 @@
     <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
 
     <h2 id="projects">Projects</h2>
-    <div class="card project">
+    <div class="card">
       <h3>Digital Visiting Card</h3>
       <img src="project1.jpg" alt="Project 1">
       <p>Online card with QR and intro.</p>
-      <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">View Demo</a>
+      <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
     </div>
-    <div class="card project">
+    <div class="card">
       <h3>Portfolio Website</h3>
       <img src="project2.jpg" alt="Project 2">
       <p>This professional portfolio site.</p>
-      <a href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" class="btn" target="_blank">View Demo</a>
+      <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
     </div>
 
     <h2 id="certificates">Certificates</h2>
@@ -189,7 +193,7 @@
     <h2>QR Code</h2>
     <div class="card" style="text-align:center;">
       <p>Scan to open my Digital Visiting Card</p>
-      <img src="qrcode.png" class="qr-img" alt="QR Code">
+      <img src="qrcode.png" alt="QR Code" class="qr-img">
       <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">Open Card</a>
     </div>
 
@@ -210,12 +214,13 @@
       <a class="btn" href="https://wa.me/919949652954" target="_blank">📱 WhatsApp</a>
       <a class="btn" href="mailto:palemsathipalem@gmail.com">📧 Email</a>
     </div>
-  </div> <!-- end of wrapper -->
+  </div>
 
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
     }
+
     function sendMessage(e) {
       e.preventDefault();
       alert("✅ Message sent successfully!");
