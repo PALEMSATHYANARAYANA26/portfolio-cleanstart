@@ -59,6 +59,24 @@
 
     h1, h2, h3 { text-align: center; }
 
+    #typed-text {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #007bff;
+    }
+
+    #cursor {
+      display: inline-block;
+      color: #007bff;
+      font-weight: bold;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
     .card {
       background: white;
       margin: 20px 0;
@@ -178,117 +196,133 @@
   <div class="wrapper" id="top">
     <img src="me.jpg" alt="My Photo" class="profile">
     <h1>Palem Sathyanarayana</h1>
-    <p style="text-align:center;">Full Stack Developer | Building projects that impress recruiters</p>
+    <p style="text-align:center;">
+      <span id="typed-text"></span><span id="cursor">|</span>
+    </p>
+    <!-- Skills Section -->
+    <div class="card" id="skills">
+      <h2>Skills</h2>
+      <p>HTML, CSS, JavaScript, Git, Responsive Design, Debugging, Team Collaboration</p>
+    </div>
 
-    <h2 id="skills">Skills</h2>
-    <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
+    <!-- Tech Stack Section -->
+    <div class="card" id="techstack">
+      <h2>Tech Stack</h2>
+      <p>Frontend: HTML5, CSS3, JavaScript<br>Backend: Node.js (Basic)<br>Tools: Git, GitHub</p>
+    </div>
 
-    <h2 id="techstack">Tech Stack</h2>
-    <div class="card" style="text-align:center;">
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center;">
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40"/><br>HTML5</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40"/><br>CSS3</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40"/><br>JS</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40"/><br>Python</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40"/><br>React</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40"/><br>GitHub</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40"/><br>Linux</div>
-        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40"/><br>MySQL</div>
+    <!-- Projects Section -->
+    <div class="card" id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project">
+          <img src="project1.jpg" alt="Project 1" onclick="showModal('project1.jpg')">
+          <h3>Project Title 1</h3>
+          <p>Short description of your project 1.</p>
+        </div>
+        <div class="project">
+          <img src="project2.jpg" alt="Project 2" onclick="showModal('project2.jpg')">
+          <h3>Project Title 2</h3>
+          <p>Short description of your project 2.</p>
+        </div>
       </div>
     </div>
 
-    <h2 id="projects">Projects</h2>
-    <div class="card project-grid">
-      <div class="project">
-        <a href="#img1"><img src="project1.jpg" alt="Project 1"></a>
-        <p>Digital Visiting Card</p>
-        <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
+    <!-- Modal for Image Zoom -->
+    <div class="modal" id="modal">
+      <a href="#" class="modal-close">&times;</a>
+      <img id="modal-img" src="" alt="Zoomed Project">
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="card" id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          "Great team player and problem solver."
+          <span>- Project Manager</span>
+        </div>
+        <div class="testimonial">
+          "Delivered the project before the deadline."
+          <span>- Client</span>
+        </div>
       </div>
-      <div class="project">
-        <a href="#img2"><img src="project2.jpg" alt="Project 2"></a>
-        <p>Portfolio Website</p>
-        <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
-      </div>
     </div>
 
-    <div id="img1" class="modal">
-      <a href="#" class="modal-close">✖</a>
-      <img src="project1.jpg" alt="Project 1 Large">
-    </div>
-    <div id="img2" class="modal">
-      <a href="#" class="modal-close">✖</a>
-      <img src="project2.jpg" alt="Project 2 Large">
-    </div>
-
-    <h2 id="testimonials">Testimonials</h2>
-    <div class="card testimonial-grid">
-      <div class="testimonial">🧑‍💼 “Sathya’s portfolio blew me away. Clean and confident.”<span>– Tech Interviewer, TalentPanel AI</span></div>
-      <div class="testimonial">👨‍🏫 “He always asked the right questions and built projects quickly.”<span>– Mrs. Lakshmi, Faculty Advisor</span></div>
-      <div class="testimonial">👨‍💻 “Motivated, detail-oriented, and always improving!”<span>– Ramesh, Peer Developer</span></div>
-    </div>
-    <h2 id="certificates">Certificates</h2>
-    <div class="card">🎓 Responsive Web Design – <a href="#">View</a></div>
-    <div class="card">📜 JavaScript Essentials – <a href="#">View</a></div>
-    <div class="card">📄 Python for Beginners – <a href="#">View</a></div>
-
-    <h2 id="education">Education</h2>
-    <div class="card">🎓 BTech in ECE - JNTUH - 2025</div>
-    <div class="card">📘 Intermediate (MPC) - 2021</div>
-    <div class="card">🏫 SSC - 2019</div>
-
-    <h2>Achievements</h2>
-    <div class="card">🏅 Top 1% in SSC Board Exams</div>
-    <div class="card">🧠 Cleared Aptitude Rounds in Govt Exams</div>
-    <div class="card">📱 Completed multiple solo tech projects</div>
-
-    <h2>My Journey</h2>
-    <div class="card">📅 2019: SSC Completed</div>
-    <div class="card">📅 2021: Intermediate (MPC)</div>
-    <div class="card">📅 2025: BTech Graduated</div>
-    <div class="card">💻 2025: Building Projects</div>
-
-    <h2 id="resume">Resume</h2>
-    <div class="card" style="text-align:center;">
-      <a href="resume.pdf" download class="btn">📄 Download Resume</a>
+    <!-- Certificates Section -->
+    <div class="card" id="certificates">
+      <h2>Certificates</h2>
+      <ul>
+        <li>Web Development Fundamentals - Coursera</li>
+        <li>Responsive Design - FreeCodeCamp</li>
+      </ul>
     </div>
 
-    <h2>QR Code</h2>
-    <div class="card" style="text-align:center;">
-      <p>Scan to open my Digital Visiting Card</p>
-      <img src="qrcode.png" alt="QR Code" class="qr-img">
-      <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">Open Card</a>
+    <!-- Education Section -->
+    <div class="card" id="education">
+      <h2>Education</h2>
+      <p>B.Tech - Computer Science<br>XYZ University, 2021</p>
     </div>
 
-    <h2 id="contact">Contact</h2>
-    <div class="card">
-      <form onsubmit="sendMessage(event)" style="display:flex; flex-direction:column; gap:12px;">
-        <input type="text" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-        <input type="email" placeholder="Your Email" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-        <textarea rows="4" placeholder="Your Message" required style="padding:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
-        <button type="submit" style="padding:12px; background:#28a745; color:white; border:none; border-radius:8px; font-size:1rem;">Send Message</button>
-      </form>
+    <!-- Resume Section -->
+    <div class="card" id="resume">
+      <h2>Resume</h2>
+      <a href="resume.pdf" target="_blank" class="btn">Download Resume (PDF)</a>
     </div>
 
-    <h2 style="text-align:center;">Connect with Me</h2>
-    <div class="card" style="text-align:center;">
-      <a class="btn" href="https://www.linkedin.com/in/palem-sathyanarayana-98a51a26a" target="_blank">🔗 LinkedIn</a>
-      <a class="btn" href="https://github.com/PALEMSATHYANARAYANA26" target="_blank">💻 GitHub</a>
-      <a class="btn" href="https://wa.me/919949652954" target="_blank">📱 WhatsApp</a>
-      <a class="btn" href="mailto:palemsathipalem@gmail.com">📧 Email</a>
+    <!-- Contact Section -->
+    <div class="card" id="contact">
+      <h2>Contact</h2>
+      <p>Email: palemsathipalem@gmail.com</p>
+      <p>Phone: 9949652954</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/palem-sathyanarayana-98a51a26a" target="_blank">Profile</a></p>
     </div>
-  </div> <!-- end of wrapper -->
+
+  </div> <!-- wrapper end -->
 
   <script>
+    // Dark mode toggle
     function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle("dark-mode");
     }
 
-    function sendMessage(e) {
-      e.preventDefault();
-      alert("✅ Message sent successfully!");
-      e.target.reset();
+    // Typing effect
+    const typingText = [
+      "Aspiring Full Stack Developer",
+      "BTech Graduate - 2021",
+      "Passionate Coder & Quick Learner"
+    ];
+    let i = 0, j = 0, currentText = "", isDeleting = false;
+
+    function type() {
+      const text = typingText[i];
+      if (isDeleting) {
+        currentText = text.substring(0, j--);
+      } else {
+        currentText = text.substring(0, j++);
+      }
+      document.getElementById("typed-text").textContent = currentText;
+
+      if (!isDeleting && j === text.length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % typingText.length;
+        setTimeout(type, 300);
+      } else {
+        setTimeout(type, isDeleting ? 50 : 100);
+      }
+    }
+    type();
+
+    // Image Modal Viewer
+    function showModal(imgSrc) {
+      document.getElementById("modal-img").src = imgSrc;
+      location.href = "#modal";
     }
   </script>
 
 </body>
 </html>
+
