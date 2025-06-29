@@ -51,3 +51,32 @@
 
     img.profile {
       width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    img.profile:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    h1, h2, h3 { text-align: center; transition: all 0.3s ease; }
+
+    #typed-text {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #007bff;
+    }
+
+    #cursor {
+      display: inline-block;
+      color: #007bff;
+      font-weight: bold;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100%
