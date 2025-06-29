@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Palem Sathyanarayana | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
   <style>
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
@@ -55,28 +56,154 @@
       display: block;
       margin: 20px auto;
       box-shadow: 0 0 12px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
-    img.profile:hover {
-      transform: scale(1.05) rotate(1deg);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
-    h1, h2, h3 { text-align: center; transition: all 0.3s ease; }
+    h1, h2, h3 { text-align: center; }
 
-    #typed-text {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: #007bff;
+    .card {
+      background: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
-    #cursor {
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .project img:hover { transform: scale(1.03); }
+
+    .btn {
       display: inline-block;
-      color: #007bff;
-      font-weight: bold;
-      animation: blink 0.7s infinite;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 10px;
     }
 
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100%
+    .qr-img { width: 150px; }
+    .testimonial-grid { display: grid; gap: 20px; }
+    .testimonial {
+      padding: 16px;
+      border-left: 4px solid #007bff;
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    .dark-mode .testimonial {
+      background: #222;
+      border-left-color: #0af;
+    }
+    .testimonial span {
+      display: block;
+      font-style: italic;
+      margin-top: 5px;
+      font-size: 0.95em;
+    }
+
+    form input, form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { flex-direction: column; align-items: center; }
+      img.profile { width: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="javascript:void(0)" onclick="toggleDarkMode()">🌙</a></li>
+    </ul>
+  </nav>
+
+  <div class="wrapper" id="top">
+    <img src="me.jpg" alt="My Photo" class="profile" data-aos="fade-down">
+    <h1>Palem Sathyanarayana</h1>
+    <p style="text-align:center;" data-aos="fade-up">Full Stack Developer | Portfolio that Impresses</p>
+
+    <h2 id="skills" data-aos="fade-up">Skills</h2>
+    <div class="card" data-aos="zoom-in">HTML, CSS, JavaScript, Python, GitHub</div>
+
+    <h2 id="projects" data-aos="fade-up">Projects</h2>
+    <div class="card project-grid" data-aos="fade-up">
+      <div class="project">
+        <img src="project1.jpg" alt="Project 1">
+        <p>Digital Visiting Card</p>
+        <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
+      </div>
+      <div class="project">
+        <img src="project2.jpg" alt="Project 2">
+        <p>Portfolio Website</p>
+        <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
+      </div>
+    </div>
+
+    <h2 id="certificates" data-aos="fade-up">Certificates</h2>
+    <div class="card" data-aos="fade-right">🎓 Responsive Web Design – <a href="#">View</a></div>
+    <div class="card" data-aos="fade-left">📜 JavaScript Essentials – <a href="#">View</a></div>
+    <div class="card" data-aos="fade-right">📄 Python for Beginners – <a href="#">View</a></div>
+
+    <h2 id="resume" data-aos="fade-up">Resume</h2>
+    <div class="card" style="text-align:center;" data-aos="zoom-in">
+      <a href="resume.pdf" download class="btn">📄 Download Resume</a>
+    </div>
+
+    <h2>QR Code</h2>
+    <div class="card" style="text-align:center;" data-aos="fade-up">
+      <img src="qrcode.png" alt="QR Code" class="qr-img">
+      <p>Scan to open my Digital Visiting Card</p>
+      <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">Open Card</a>
+    </div>
+
+    <h2 id="contact" data-aos="fade-up">Contact Me</h2>
+    <div class="card" data-aos="fade-up">
+      <form onsubmit="sendMessage(event)" style="display:flex; flex-direction:column; gap:12px;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+
+    <div class="card" style="text-align:center;" data-aos="fade-up">
+      <a class="btn" href="https://www.linkedin.com/in/palem-sathyanarayana-98a51a26a" target="_blank">🔗 LinkedIn</a>
+      <a class="btn" href="https://github.com/PALEMSATHYANARAYANA26" target="_blank">💻 GitHub</a>
+      <a class="btn" href="https://wa.me/919949652954" target="_blank">📱 WhatsApp</a>
+      <a class="btn" href="mailto:palemsathipalem@gmail.com">📧 Email</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    function sendMessage(e) {
+      e.preventDefault();
+      alert(\"✅ Message sent successfully!\");
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
