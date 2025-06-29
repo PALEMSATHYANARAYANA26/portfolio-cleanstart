@@ -97,10 +97,7 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-
-    .project img:hover {
-      transform: scale(1.03);
-    }
+    .project img:hover { transform: scale(1.03); }
 
     .btn {
       display: inline-block;
@@ -122,17 +119,12 @@
       align-items: center;
       z-index: 1000;
     }
-
     .modal img {
       max-width: 90%;
       max-height: 80vh;
       border-radius: 8px;
     }
-
-    .modal:target {
-      display: flex;
-    }
-
+    .modal:target { display: flex; }
     .modal-close {
       position: absolute;
       top: 20px;
@@ -142,34 +134,24 @@
       text-decoration: none;
     }
 
-    .qr-img {
-      width: 150px;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      gap: 20px;
-    }
-
+    .qr-img { width: 150px; }
+    .testimonial-grid { display: grid; gap: 20px; }
     .testimonial {
       padding: 16px;
       border-left: 4px solid #007bff;
       background: #f1f1f1;
       border-radius: 10px;
     }
-
     .dark-mode .testimonial {
       background: #222;
       border-left-color: #0af;
     }
-
     .testimonial span {
       display: block;
       font-style: italic;
       margin-top: 5px;
       font-size: 0.95em;
     }
-
     @media (max-width: 600px) {
       .nav-links { flex-direction: column; align-items: center; }
       img.profile { width: 100px; }
@@ -177,7 +159,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <ul class="nav-links">
       <li><a href="#top">Home</a></li>
@@ -200,125 +181,45 @@
       <span id="typed-text"></span><span id="cursor">|</span>
     </p>
 
-    <!-- Skills Section -->
-    <div class="card" id="skills">
-      <h2>Skills</h2>
-      <p>HTML, CSS, JavaScript, Git, Responsive Design, Debugging, Team Collaboration</p>
-    </div>
+    <h2 id="skills">Skills</h2>
+    <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
 
-    <!-- Tech Stack Section -->
-    <div class="card" id="techstack">
-      <h2>Tech Stack</h2>
-      <p>Frontend: HTML5, CSS3, JavaScript<br>Backend: Node.js (Basic)<br>Tools: Git, GitHub</p>
-    </div>
-
-    <!-- Projects Section -->
-    <div class="card" id="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project">
-          <img src="project1.jpg" alt="Project 1" onclick="showModal('project1.jpg')">
-          <h3>Project Title 1</h3>
-          <p>Short description of your project 1.</p>
-        </div>
-        <div class="project">
-          <img src="project2.jpg" alt="Project 2" onclick="showModal('project2.jpg')">
-          <h3>Project Title 2</h3>
-          <p>Short description of your project 2.</p>
-        </div>
+    <h2 id="techstack">Tech Stack</h2>
+    <div class="card" style="text-align:center;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center;">
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40"/><br>HTML5</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40"/><br>CSS3</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40"/><br>JavaScript</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40"/><br>Python</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40"/><br>React</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40"/><br>GitHub</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40"/><br>Linux</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40"/><br>MySQL</div>
       </div>
     </div>
 
-    <!-- Modal for Image Zoom -->
-    <div class="modal" id="modal">
-      <a href="#" class="modal-close">&times;</a>
-      <img id="modal-img" src="" alt="Zoomed Project">
-    </div>
-
-    <!-- Testimonials Section -->
-    <div class="card" id="testimonials">
-      <h2>Testimonials</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial">
-          "Great team player and problem solver."
-          <span>- Project Manager</span>
-        </div>
-        <div class="testimonial">
-          "Delivered the project before the deadline."
-          <span>- Client</span>
-        </div>
+    <h2 id="projects">Projects</h2>
+    <div class="card project-grid">
+      <div class="project">
+        <a href="#img1"><img src="project1.jpg" alt="Project 1"></a>
+        <p>Digital Visiting Card</p>
+        <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
+      </div>
+      <div class="project">
+        <a href="#img2"><img src="project2.jpg" alt="Project 2"></a>
+        <p>Portfolio Website</p>
+        <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
       </div>
     </div>
 
-    <!-- Certificates Section -->
-    <div class="card" id="certificates">
-      <h2>Certificates</h2>
-      <ul>
-        <li>Web Development Fundamentals - Coursera</li>
-        <li>Responsive Design - FreeCodeCamp</li>
-      </ul>
+    <div id="img1" class="modal"><a href="#" class="modal-close">✖</a><img src="project1.jpg"></div>
+    <div id="img2" class="modal"><a href="#" class="modal-close">✖</a><img src="project2.jpg"></div>
+
+    <h2 id="testimonials">Testimonials</h2>
+    <div class="card testimonial-grid">
+      <div class="testimonial">🧑‍💼 “Sathya’s portfolio blew me away. Clean and confident.”<span>– Tech Interviewer, TalentPanel AI</span></div>
+      <div class="testimonial">👨‍🏫 “He always asked the right questions and built projects quickly.”<span>– Mrs. Lakshmi, Faculty Advisor</span></div>
+      <div class="testimonial">👨‍💻 “Motivated, detail-oriented, and always improving!”<span>– Ramesh, Peer Developer</span></div>
     </div>
 
-    <!-- Education Section -->
-    <div class="card" id="education">
-      <h2>Education</h2>
-      <p>B.Tech - Computer Science<br>XYZ University, 2021</p>
-    </div>
-
-    <!-- Resume Section -->
-    <div class="card" id="resume">
-      <h2>Resume</h2>
-      <a href="resume.pdf" target="_blank" class="btn">Download Resume (PDF)</a>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="card" id="contact">
-      <h2>Contact</h2>
-      <p>Email: palemsathipalem@gmail.com</p>
-      <p>Phone: 9949652954</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/palem-sathyanarayana-98a51a26a" target="_blank">Profile</a></p>
-    </div>
-  </div>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
-    }
-
-    const typingText = [
-      "Aspiring Full Stack Developer",
-      "BTech Graduate - 2021",
-      "Passionate Coder & Quick Learner"
-    ];
-    let i = 0, j = 0, currentText = "", isDeleting = false;
-
-    function type() {
-      const text = typingText[i];
-      if (isDeleting) {
-        currentText = text.substring(0, j--);
-      } else {
-        currentText = text.substring(0, j++);
-      }
-      document.getElementById("typed-text").textContent = currentText;
-
-      if (!isDeleting && j === text.length) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-      } else if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % typingText.length;
-        setTimeout(type, 300);
-      } else {
-        setTimeout(type, isDeleting ? 50 : 100);
-      }
-    }
-    type();
-
-    function showModal(imgSrc) {
-      document.getElementById("modal-img").src = imgSrc;
-      location.href = "#modal";
-    }
-  </script>
-
-</body>
-</html>
+    <!-- Continue from here with certificates, education, resume, contact, and scripts -->
