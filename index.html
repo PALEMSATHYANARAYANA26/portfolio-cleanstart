@@ -14,8 +14,14 @@
       color: #222;
       transition: all 0.5s ease;
     }
-    .dark-mode { background: #121212; color: #eee; }
-    .dark-mode .card { background: #1e1e1e; border-color: #444; }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    .dark-mode .card {
+      background: #1e1e1e;
+      border-color: #444;
+    }
 
     nav {
       position: fixed;
@@ -26,8 +32,9 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       z-index: 999;
     }
-    .dark-mode nav { background: #1a1a1a; }
-
+    .dark-mode nav {
+      background: #1a1a1a;
+    }
     .nav-links {
       display: flex;
       justify-content: center;
@@ -57,9 +64,7 @@
       box-shadow: 0 0 12px rgba(0,0,0,0.2);
     }
 
-    h1, h2, h3 {
-      text-align: center;
-    }
+    h1, h2, h3 { text-align: center; }
 
     .card {
       background: white;
@@ -163,30 +168,14 @@
     <h2 id="techstack">Tech Stack</h2>
     <div class="card" style="text-align:center;">
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center;">
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" alt="HTML5"/><br>HTML5
-        </div>
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" alt="CSS3"/><br>CSS3
-        </div>
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" alt="JS"/><br>JavaScript
-        </div>
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" alt="Python"/><br>Python
-        </div>
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" alt="React"/><br>React
-        </div>
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40" alt="GitHub"/><br>GitHub
-        </div>
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40" alt="Linux"/><br>Linux
-        </div>
-        <div>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" alt="MySQL"/><br>MySQL
-        </div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40"/><br>HTML5</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40"/><br>CSS3</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40"/><br>JS</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40"/><br>Python</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40"/><br>React</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40"/><br>GitHub</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="40"/><br>Linux</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40"/><br>MySQL</div>
       </div>
     </div>
 
@@ -204,7 +193,6 @@
       </div>
     </div>
 
-    <!-- Zoom modals -->
     <div id="img1" class="modal">
       <a href="#" class="modal-close">✖</a>
       <img src="project1.jpg" alt="Project 1 Large">
@@ -248,11 +236,11 @@
 
     <h2 id="contact">Contact</h2>
     <div class="card">
-      <form onsubmit="sendMessage(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+      <form onsubmit="sendMessage(event)" style="display:flex; flex-direction:column; gap:12px;">
+        <input type="text" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+        <input type="email" placeholder="Your Email" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+        <textarea rows="4" placeholder="Your Message" required style="padding:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
+        <button type="submit" style="padding:12px; background:#28a745; color:white; border:none; border-radius:8px; font-size:1rem;">Send Message</button>
       </form>
     </div>
 
