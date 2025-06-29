@@ -61,6 +61,23 @@
       transition: background 0.3s ease;
     }
     .btn:hover { background: #0056b3; }
+    .social-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .social-btns a {
+      background: #007bff;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .social-btns a:hover {
+      background: #0056b3;
+    }
     .toggle-mode {
       position: fixed;
       top: 15px;
@@ -105,100 +122,109 @@
 </head>
 <body>
 
-  <div class="toggle-mode" onclick="toggleDarkMode()">🌙</div>
-  <div id="scrollBtn" onclick="scrollToTop()">↑</div>
+<div class="toggle-mode" onclick="toggleDarkMode()">🌙</div>
+<div id="scrollBtn" onclick="scrollToTop()">↑</div>
 
-  <div class="wrapper">
-    <img src="me.jpg" alt="My Photo" class="profile">
-    <h1>Palem Sathyanarayana</h1>
-    <p style="text-align:center;">Full Stack Developer | Creating impressive websites that stand out</p>
+<div class="wrapper">
+  <img src="me.jpg" alt="My Photo" class="profile">
+  <h1>Palem Sathyanarayana</h1>
+  <p style="text-align:center;">Full Stack Developer | Creating impressive websites that stand out</p>
 
-    <h2>Skills</h2>
-    <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
+  <h2>Skills</h2>
+  <div class="card">HTML, CSS, JavaScript, Python, GitHub</div>
 
-    <h2>Projects</h2>
-    <div class="card project">
-      <h3>Digital Visiting Card</h3>
-      <p>Online card with QR and intro.</p>
-      <img src="project1.jpg" alt="Project 1">
-      <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">View Demo</a>
-    </div>
-    <div class="card project">
-      <h3>Portfolio Website</h3>
-      <p>This professional portfolio site.</p>
-      <img src="project2.jpg" alt="Project 2">
-      <a href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" class="btn" target="_blank">View Demo</a>
-    </div>
-
-    <h2>Certificates</h2>
-    <div class="card">🎓 Responsive Web Design – <a href="#">View</a></div>
-    <div class="card">📜 JavaScript Essentials – <a href="#">View</a></div>
-    <div class="card">📄 Python for Beginners – <a href="#">View</a></div>
-
-    <h2>Education</h2>
-    <div class="card">🎓 BTech in ECE - JNTUH - 2025</div>
-    <div class="card">📘 Intermediate (MPC) - 2021</div>
-    <div class="card">🏫 SSC - 2019</div>
-
-    <h2>Achievements</h2>
-    <div class="card">🏅 Top 1% in SSC Board Exams</div>
-    <div class="card">🧠 Cleared Aptitude Rounds in Govt Exams</div>
-    <div class="card">📱 Completed multiple solo tech projects</div>
-
-    <h2>My Journey</h2>
-    <div class="card">📅 2019: SSC Completed</div>
-    <div class="card">📅 2021: Intermediate (MPC)</div>
-    <div class="card">📅 2025: BTech Graduated</div>
-    <div class="card">💻 2025: Building Projects</div>
-
-    <h2>Resume</h2>
-    <div class="card" style="text-align:center;">
-      <a href="resume.pdf" download class="btn">📄 Download Resume</a>
-    </div>
-
-    <h2>QR Code</h2>
-    <div class="card" style="text-align:center;">
-      <p>Scan to open my Digital Visiting Card</p>
-      <img src="qrcode.png" alt="QR Code" class="qr-img">
-      <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">Open Card</a>
-    </div>
-
-    <h2>Contact</h2>
-    <div class="card">
-      <form onsubmit="sendMessage(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+  <h2>Projects</h2>
+  <div class="card project">
+    <h3>Digital Visiting Card</h3>
+    <p>Online card with QR and intro.</p>
+    <img src="project1.jpg" alt="Project 1">
+    <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">View Demo</a>
+  </div>
+  <div class="card project">
+    <h3>Portfolio Website</h3>
+    <p>This professional portfolio site.</p>
+    <img src="project2.jpg" alt="Project 2">
+    <a href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" class="btn" target="_blank">View Demo</a>
   </div>
 
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
+  <h2>Certificates</h2>
+  <div class="card">🎓 Responsive Web Design – <a href="#">View</a></div>
+  <div class="card">📜 JavaScript Essentials – <a href="#">View</a></div>
+  <div class="card">📄 Python for Beginners – <a href="#">View</a></div>
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  <h2>Education</h2>
+  <div class="card">🎓 BTech in ECE - JNTUH - 2025</div>
+  <div class="card">📘 Intermediate (MPC) - 2021</div>
+  <div class="card">🏫 SSC - 2019</div>
+  <h2>Achievements</h2>
+  <div class="card">🏅 Top 1% in SSC Board Exams</div>
+  <div class="card">🧠 Cleared Aptitude Rounds in Govt Exams</div>
+  <div class="card">📱 Completed multiple solo tech projects</div>
 
-    window.onscroll = () => {
-      document.getElementById("scrollBtn").style.display = window.scrollY > 100 ? "block" : "none";
-      document.querySelectorAll(".card").forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-          card.classList.add("show");
-        }
-      });
-    };
+  <h2>My Journey</h2>
+  <div class="card">📅 2019: SSC Completed</div>
+  <div class="card">📅 2021: Intermediate (MPC)</div>
+  <div class="card">📅 2025: BTech Graduated</div>
+  <div class="card">💻 2025: Building Projects</div>
 
-    function sendMessage(e) {
-      e.preventDefault();
-      alert("✅ Message sent successfully!");
-      e.target.reset();
-    }
-  </script>
+  <h2>Resume</h2>
+  <div class="card" style="text-align:center;">
+    <a href="resume.pdf" download class="btn">📄 Download Resume</a>
+  </div>
+
+  <h2>QR Code</h2>
+  <div class="card" style="text-align:center;">
+    <p>Scan to open my Digital Visiting Card</p>
+    <img src="qrcode.png" alt="QR Code" class="qr-img">
+    <a href="https://palemsathyanarayana26.github.io/p1" class="btn" target="_blank">Open Card</a>
+  </div>
+
+  <h2>Contact</h2>
+  <div class="card">
+    <form onsubmit="sendMessage(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <h2 style="text-align:center;">Connect with Me</h2>
+  <div class="card social-btns">
+    <a href="https://www.linkedin.com/in/palem-sathyanarayana-98a51a26a" target="_blank">🔗 LinkedIn</a>
+    <a href="https://github.com/PALEMSATHYANARAYANA26" target="_blank">💻 GitHub</a>
+    <a href="https://wa.me/919949652954" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:palemsathipalem@gmail.com">📧 Email</a>
+  </div>
+
+</div> <!-- end of wrapper -->
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.onscroll = () => {
+    document.getElementById("scrollBtn").style.display = window.scrollY > 100 ? "block" : "none";
+    document.querySelectorAll(".card").forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        card.classList.add("show");
+      }
+    });
+  };
+
+  function sendMessage(e) {
+    e.preventDefault();
+    alert("✅ Message sent successfully!");
+    e.target.reset();
+  }
+</script>
 
 </body>
 </html>
+
