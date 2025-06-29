@@ -77,57 +77,6 @@
       margin-top: 10px;
       min-height: 40px;
     }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .project img {
-      width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .project img:hover { transform: scale(1.03); }
-
-    .btn {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 30px;
-      margin-top: 10px;
-    }
-
-    .qr-img { width: 150px; }
-
-    form input, form textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      width: 100%;
-    }
-
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-    }
-    .floating-whatsapp img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    @media (max-width: 600px) {
-      .nav-links { flex-direction: column; align-items: center; }
-      img.profile { width: 100px; }
-    }
   </style>
 </head>
 <body>
@@ -136,6 +85,8 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#journey">Journey</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="javascript:void(0)" onclick="toggleDarkMode()">🌙</a></li>
@@ -146,18 +97,19 @@
     <img src="me.jpg" alt="My Photo" class="profile" data-aos="fade-down">
     <h1 data-aos="fade-up">Palem Sathyanarayana</h1>
     <div class="typing" id="typing"></div>
-
     <h2 id="projects" data-aos="fade-up">Projects</h2>
-    <div class="card project-grid" data-aos="fade-up">
-      <div class="project">
-        <img src="project1.jpg" alt="Project 1">
-        <p>Digital Visiting Card</p>
-        <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
-      </div>
-      <div class="project">
-        <img src="project2.jpg" alt="Project 2">
-        <p>Portfolio Website</p>
-        <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
+    <div class="card" data-aos="fade-up">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+        <div>
+          <img src="project1.jpg" alt="Project 1" style="width:100%; border-radius:10px;">
+          <p>Digital Visiting Card</p>
+          <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">View Demo</a>
+        </div>
+        <div>
+          <img src="project2.jpg" alt="Project 2" style="width:100%; border-radius:10px;">
+          <p>Portfolio Website</p>
+          <a class="btn" href="https://palemsathyanarayana26.github.io/portfolio-cleanstart" target="_blank">View Demo</a>
+        </div>
       </div>
     </div>
 
@@ -165,6 +117,19 @@
     <div class="card" data-aos="fade-left">🎓 BTech in ECE – JNTUH – 2025</div>
     <div class="card" data-aos="fade-right">📘 Intermediate (MPC) – 2021</div>
     <div class="card" data-aos="fade-left">🏫 SSC – 2019</div>
+
+    <h2 id="achievements" data-aos="fade-up">Achievements</h2>
+    <div class="card" data-aos="fade-right">🏅 Top 1% in SSC Board Exams</div>
+    <div class="card" data-aos="fade-left">🧠 Cleared Aptitude Rounds in Govt Exams</div>
+    <div class="card" data-aos="fade-right">📱 Built multiple solo tech projects</div>
+
+    <h2 id="journey" data-aos="fade-up">My Journey</h2>
+    <div class="card" data-aos="zoom-in">
+      📅 2019: SSC Completed<br>
+      📅 2021: Intermediate (MPC)<br>
+      📅 2025: BTech Graduated<br>
+      💻 2025: Building Projects
+    </div>
 
     <h2 id="resume" data-aos="fade-up">Resume</h2>
     <div class="card" style="text-align:center;" data-aos="zoom-in">
@@ -177,7 +142,6 @@
       <p>Scan to open my Digital Visiting Card</p>
       <a class="btn" href="https://palemsathyanarayana26.github.io/p1" target="_blank">Open Card</a>
     </div>
-
     <h2 id="contact" data-aos="fade-up">Contact Me</h2>
     <div class="card" data-aos="fade-up">
       <form onsubmit="sendMessage(event)" style="display:flex; flex-direction:column; gap:12px;">
@@ -196,25 +160,27 @@
   </div>
 
   <!-- Floating WhatsApp Button -->
-  <div class="floating-whatsapp">
+  <div class="floating-whatsapp" style="position:fixed;bottom:20px;right:20px;z-index:999;">
     <a href="https://wa.me/919949652954" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:60px;height:60px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,0.3);">
     </a>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
+
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
     }
+
     function sendMessage(e) {
       e.preventDefault();
       alert("✅ Message sent successfully!");
       e.target.reset();
     }
 
-    // Typing animation
+    // Typing Animation
     const typing = document.getElementById('typing');
     const texts = ["Full Stack Developer", "Designer", "Problem Solver"];
     let i = 0, j = 0, currentText = "", isDeleting = false;
